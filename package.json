@@ -1,0 +1,51 @@
+{
+  "name": "travel-joy",
+  "version": "1.0.0",
+  "description": "Travel theme for WordPress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/ws-themes/travel-joy.git"
+  },
+  "keywords": [
+    "travel-joy",
+    "travel",
+    "hotels",
+    "booking"
+  ],
+  "author": "WEN Solutions",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://gitlab.com/ws-themes/travel-joy/issues"
+  },
+  "homepage": "https://gitlab.com/ws-themes/travel-joy#README",
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "grunt": "^1.0.4",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-checktextdomain": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-compress": "^1.4.3",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-file-creator": "^0.1.3",
+    "grunt-push-svn": "^0.2.2",
+    "grunt-rtlcss": "^2.0.1",
+    "grunt-svn-export": "^0.1.7",
+    "grunt-wp-i18n": "^1.0.0",
+    "sass": "^0.5.0"
+  },
+  "dependencies": {
+    "grunt-writefile": "^0.1.4",
+    "grunt-zip": "^0.18.1",
+    "node-native-zip": "^1.1.0"
+  }
+}

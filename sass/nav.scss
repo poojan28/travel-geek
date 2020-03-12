@@ -1,0 +1,661 @@
+/* 
+Ace Responsive Menu Plugin
+Version: 1.0
+Author: Samson Onna
+E-mail: samson3d@gmail.com
+Website: www.webthemez.com
+----------------------------------------*/
+/* Import Fonts
+----------------------------------------*/
+
+
+/* Ace Responsive Menu
+----------------------------------------*/
+.header{
+                    
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top:29px;
+   .logo{
+       max-width:220px;
+       height:auto;
+       @media(max-width:992px){
+           display:none;
+       }
+       .site-identity{
+            .custom-logo-link{
+                img{
+                    width:100%;
+                    height:auto;    
+                }
+            }
+       }
+   }
+   .theme-navigation-bar{
+       display:flex;
+       flex-direction:row;
+       align-items: center;
+       @media(max-width:992px){
+           width:100%;
+       }
+       .theme-nav-bar{
+           
+           margin:0 58px 0 20px;
+           @media(max-width:992px){
+                margin:0;
+                width:100%;
+            }
+            
+       }
+       //desktop search bar
+        .nav-account-section{
+            display:block;
+            @media(max-width:992px){
+                display:none;
+            }
+                .nav-account-section-wrapper{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    @media(min-width:992px){
+                        display:flex !important;
+                    }
+                    .search-widget{
+                        position: relative;
+                        margin-right:20px;
+                            
+                            label{
+                                position: relative;
+                                &:after{
+                                    content: "\f002";
+                                    font-family: "Font Awesome 5 Free";
+                                    font-weight: 900;
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    right: -30px;
+                                    font-size: 20px;
+                                    color: #D2D2D2;
+
+                                }
+                                span{
+                                    display:none;
+                                }
+                            }
+                            
+                            
+                            .search-form {
+                                display: flex;
+                                height: 40px;
+                                label{
+                                    width:100%;
+                                    .search-field {
+                                        border: none;
+                                        background: none;
+                                        outline: none;
+                                        float: left;
+                                        padding: 0;
+                                        color: white;
+                                        font-size: 16px;
+                                        transition: 0.4s;
+                                        line-height: 40px;
+                                        width: 0px;
+                                    }
+                                }
+                                
+                                .search-submit {
+                                    border: none;
+                                    color: transparent;
+                                    float: right;
+                                    width: 40px;
+                                    height: 40px;
+                                    /* border-radius: 50%; */
+                                    background: transparent;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    transition: 0.4s;
+                                    
+                                }
+                                
+                                &:hover {
+                                    
+                                    >label .search-field {
+                                        width: 240px;
+                                        padding: 0 6px;
+                                        margin-right:-10px;
+                                        color:#000;
+                                        background-color: white;
+                                        border-top-left-radius: 5px;
+                                        border-bottom-left-radius: 5px;
+                                    }
+                                    >.search-submit {
+                                        background: #fff;
+                                        color: #2f3640;
+                                        border-top-right-radius: 5px;
+                                        border-bottom-right-radius: 5px;
+                                    }
+                                }
+                            }
+                            @media screen and (max-width: 620px) {
+                                .search-form {
+                                    &:hover {
+                                        >.search-field {
+                                            width: 150px;
+                                            padding: 0 6px;
+                                        }
+                                    }
+                                }
+                            }
+                    }
+                    .user-account{
+                        margin-left:17px;
+                        
+                        p{
+                            font-size: 14px;
+                            color:white;
+                        }
+                    }
+
+                } 
+
+        }
+    }
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    // background: #333;
+    float:left;
+    width:100%;
+    font-family: 'Roboto', sans-serif;
+    /* border-bottom: 3px solid #FD5025; */
+}
+.menu .menu-item{
+    list-style: none;
+}
+.menu .menu-item .sub-menu {
+    display:none;
+}
+.menu > .menu-item {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    float: left;
+}
+.menu .menu-item a {
+        color:#fff;
+}
+.menu > .menu-item > a {
+    display: block;
+    position: relative;
+    margin: 0;
+    border: 0px;
+    padding: 18px 20px 18px 12px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+}
+.menu .menu-item a i {
+    padding-right: 5px;
+    color: #FF5737;
+}
+.menu > .menu-item > a i {
+    font-size: 16px;
+    text-shadow: none;
+    color: #FF5737;
+}
+.menu .menu-item ul.sub-menu .menu-item a i {
+    padding-right: 10px;
+}
+.menu .menu-item.menu-active > a {
+    color:$text-primary-color;
+}
+.menu .menu-item .menu-active {
+    position: relative;
+}
+.menu .menu-item.menu-item-has-children > a:after{
+    margin-left: 15px;
+    display: inline;
+    font-size: 16px;
+    font-family: FontAwesome;
+    height: auto;
+    content: " \276F";
+    font-weight: 300;
+    text-shadow: none;
+    width: 10px;
+    display: inline-block;
+	transform: rotate(90deg); 
+}
+
+.menu .menu-item ul.sub-menu .menu-item > a > .arrow:before {
+    content: "\f105" !important;
+}
+.menu > li > ul.sub-menu {
+    display: none;
+    list-style: none;
+    clear: both;
+    margin: 0;
+    position: absolute;
+    z-index: 999;
+}
+.menu .menu-item ul.sub-menu {
+    background: #fff;
+}
+.menu .menu-item ul.sub-menu > .menu-item {
+    width: 185px;
+    background:white;
+        &:hover{
+            background:#EAEEFA;
+        }
+}
+.menu .menu-item ul.sub-menu .menu-item a {
+    display: block;
+    margin: 0px 0px;
+    padding: 12px 20px 12px 15px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: normal;
+    background: none;
+    color:$text-primary-color;
+}
+.menu > .menu-item > ul.sub-menu > .menu-item {
+    position: relative;
+}
+.menu > .menu-item > ul.sub-menu > .menu-item ul.sub-menu {
+    position: absolute;
+    left: 185px;
+    top: 0px;
+    display: none;
+    list-style: none;
+}
+.menu > .menu-item > ul.sub-menu > .menu-item ul.sub-menu > .menu-item ul.sub-menu {
+    position: absolute;
+    left: 185px;
+    top: 0px;
+    display: none;
+    list-style: none;
+}
+.menu > .menu-item > ul.sub-menu .menu-item > a > .arrow:before {
+    float: right;
+    margin-top: 1px;
+    margin-right: 0px;
+    display: inline;
+    font-size: 16px;
+    font-family: FontAwesome;
+    height: auto;
+    content: "\f104";
+    font-weight: 300;
+    text-shadow: none;
+}
+
+/* Menu Toggle Btn
+----------------------------------------*/
+.menu-toggle {
+    display: none;
+    float: left;
+    width: 100%;
+}
+.menu-toggle{
+    .logo{
+        margin-left:10px;
+        max-width: 220px !important;
+        height: auto !important;
+        display: inline-block !important;
+        
+        .site-identity{
+             .custom-logo-link{
+                 img{
+                     width:100%;
+                     height:auto;    
+                 }
+             }
+        }
+    }
+}
+.menu-toggle h3 {
+    float: left;
+    color: #FFF;
+    padding: 0px 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+.menu-toggle .icon-bar {
+    display: block !important;
+    width: 18px;
+    height: 2px;
+    background-color: #4e4e4e !important;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    margin: 3px;
+}
+.menu-toggle .icon-bar:hover {
+    background-color: #F5F5F5 !important;
+}
+.menu-toggle #menu-btn {
+    float: right;
+    background: #fff;
+    border: 1px solid #ccb7b7;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+.hide-menu {
+    display: none;
+}
+
+
+/* Accordion Menu Styles
+----------------------------------------*/
+
+ul[data-menu-style="accordion"] {
+    width: 250px;
+}
+ul[data-menu-style="accordion"] > li {    
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    float: none !important;
+}
+ul[data-menu-style="accordion"] > li:first-child {
+    border-top: 2px solid #FD5025;
+}
+ul[data-menu-style="accordion"] li ul.sub-menu > li {
+    width: 100%;
+}
+ul[data-menu-style="accordion"] > li > a > .arrow:before {
+    float: right;
+    content: "\f105";
+}
+ul[data-menu-style="accordion"] li.menu-active > a > .arrow:before {
+    content: "\f107" !important;
+}
+ul[data-menu-style="accordion"] > li > ul.sub-menu {
+    position: static;
+}
+ul[data-menu-style="accordion"] > li > a i {
+    padding-right: 10px;
+    color: #FF5737;
+}
+ul[data-menu-style="accordion"] > li > ul.sub-menu > li ul.sub-menu {
+    position: static;
+}
+ul[data-menu-style="accordion"] > li > ul.sub-menu > li ul.sub-menu > li ul.sub-menu {
+    position: static;
+}
+ul[data-menu-style="accordion"] > li {
+    border-bottom: 1px solid #242424;
+}
+ul[data-menu-style="accordion"] li a:hover {
+    background: #272727 !important;
+}
+ul[data-menu-style="accordion"] ul.sub-menu .menu-item.menu-active > a > .arrow:before {
+    content: "\f107" !important;
+}
+
+/* Vertical Menu Styles
+----------------------------------------*/
+
+ul[data-menu-style="vertical"] {
+    width: 200px;
+}
+ul[data-menu-style="vertical"] > li {
+    float: none;
+}
+ul[data-menu-style="vertical"] > li:first-child {
+    border-top: 2px solid #FD5025;
+}
+ul[data-menu-style="vertical"] li ul.sub-menu > li {
+    width: 100%;
+}
+ul[data-menu-style="vertical"] > li > a > .arrow:before {
+    float: right;
+    content: "\f105";
+}
+ul[data-menu-style="vertical"] > li.menu-active {
+position:relative;
+}
+ul[data-menu-style="vertical"] > li > ul.sub-menu {
+    position: absolute;
+    left:200px;
+    top:0px;
+    width:200px;
+}
+ul[data-menu-style="vertical"] > li > a i {
+    padding-right: 10px;
+    color: #FF5737;
+}
+ul[data-menu-style="vertical"]> li > ul.sub-menu > li ul.sub-menu {
+    position: absolute;
+    width:200px;
+    left: 200px;
+}
+ul[data-menu-style="vertical"] > li > ul.sub-menu > li ul.sub-menu > li ul.sub-menu {
+    position: absolute;
+    width:200px;
+    left: 200px;
+}
+ul[data-menu-style="vertical"] > li {
+    border-bottom: 1px solid #242424;
+}
+ul[data-menu-style="vertical"] li a:hover {
+    background: #272727 !important;
+}
+
+/* Responsive Menu Styles
+----------------------------------------*/
+/*Note: change the max-width asper your requirment and change the same in aceResponsiveMenu({resizeWidth: "768" }) function*/
+
+@media screen and (max-width: 992px) {
+    .demo {
+		width:96%;
+		padding:2%;
+    }
+    ul[data-menu-style="vertical"] , ul[data-menu-style="accordion"],
+    ul[data-menu-style="vertical"] .menu-item ul.sub-menu {
+        width: 100% !important;
+    } 
+    .menu {
+        float: left;
+        width: 100vw;
+        margin: 0 calc(+50% - 50vw);
+        background:$primary-color;
+        padding: 0 25px;
+    }
+    .menu > .menu-item {
+        border-bottom: 1px solid #242424;
+       float: none;
+    }   
+    .menu .menu-item a:hover {
+        background: #e6e5e5 !important;
+    }
+    .menu > .menu-item:first-child {
+        border-top: 2px solid #FD5025;
+    }    
+    .menu > .menu-item > a i {
+        padding-right: 10px;
+        color: #FF5737;
+    }
+    .menu .menu-item.menu-item-has-children > a:after{ 
+        float: right;
+         content: " \276F";
+		font-weight: 300;
+		text-shadow: none;
+		width: 10px;
+		display: inline-block;
+		transform: rotate(90deg);
+    }
+    .menu-item.menu-active > a > .arrow:before {
+    content: " \276F";
+    font-weight: 300;
+    text-shadow: none;
+    width: 10px;
+    display: inline-block;
+	transform: rotate(90deg);
+    }
+   
+    .menu .menu-item ul.sub-menu > .menu-item {
+        width: 100%;
+        
+    }
+    .menu .menu-item ul.sub-menu .menu-item ul.sub-menu .menu-item a
+        {
+        padding-left: 30px;
+    }  
+    .menu .menu-item ul.sub-menu .menu-item ul.sub-menu .menu-item ul.sub-menu .menu-item a 
+       {
+        padding-left: 50px;
+    }  
+    .menu > .menu-item > ul.sub-menu {
+        position: static;
+    }
+    .menu > .menu-item > ul.sub-menu > .menu-item ul.sub-menu {
+        position: static;
+    }
+    .menu > .menu-item > ul.sub-menu > .menu-item ul.sub-menu > .menu-item ul.sub-menu {
+        position: static;
+    }
+    .menu .menu-item ul.sub-menu .menu-item.menu-active > a > .arrow:before {
+          content: " \276F";
+    font-weight: 300;
+    text-shadow: none;
+    width: 10px;
+    display: inline-block;
+	transform: rotate(90deg);
+    }
+} 
+.only-mob{
+    display:none !important;
+}
+@media(max-width:992px){
+        //mobile search 
+            .only-mob{
+                display:block !important;
+                
+                .added-through-js{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    width:100%;
+                    padding:5px 10px;
+                    .search{
+                        position: relative;
+                            label{
+                                position: relative;
+                                &:after{
+                                    content: "\f002";
+                                    font-family: "Font Awesome 5 Free";
+                                    font-weight: 900;
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    font-size: 20px;
+                                    color: #D2D2D2;
+    
+                                }
+                                span{
+                                    display:none;
+                                }
+                            }
+                            
+                            
+                            .search-form {
+                                display: flex;
+                                height: 40px;
+                                label{
+                                    width:100%;
+                                    .search-field {
+                                        border: none;
+                                        background: none;
+                                        outline: none;
+                                        float: left;
+                                        padding: 0;
+                                        color: white;
+                                        font-size: 16px;
+                                        transition: 0.4s;
+                                        line-height: 40px;
+                                        width: 0px;
+                                    }
+                                }
+                                
+                                .search-submit {
+                                    border: none;
+                                    color: transparent;
+                                    float: right;
+                                    width: 40px;
+                                    height: 40px;
+                                    /* border-radius: 50%; */
+                                    background: transparent;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    transition: 0.4s;
+                                    
+                                }
+                                
+                                &:hover {
+                                    
+                                    >label .search-field {
+                                        width: 240px;
+                                        padding: 0 6px;
+                                        margin-right: -10px;
+                                        color:#000;
+                                        background-color: white;
+                                        border-top-left-radius: 5px;
+                                        border-bottom-left-radius: 5px;
+                                    }
+                                    >.search-submit {
+                                        background: #fff;
+                                        color: #2f3640;
+                                        border-top-right-radius: 5px;
+                                        border-bottom-right-radius: 5px;
+                                    }
+                                }
+                            }
+                            @media(max-width: 420px) {
+                                .search-form {
+                                    &:hover {
+                                        >.search-field {
+                                            width: 150px;
+                                            padding: 0 6px;
+                                        }
+                                    }
+                                }
+                            }
+                           
+                    }
+                    .account{
+                            margin-left: auto;
+                        
+                        p{
+                            font-size: 14px;
+                            color:white;
+                        }
+                    }
+                   
+                }
+            }
+            
+        }
+        @media (max-width: 420px){
+            .only-mob .added-through-js .search .search-form:hover > label .search-field {
+                width: 150px;
+                padding: 0 6px;
+            }
+        }
+
+        
+   

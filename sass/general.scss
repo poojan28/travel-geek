@@ -1,0 +1,87 @@
+// general css
+.section-header{
+     margin-bottom:41px;               
+    text-align: center;
+    padding:0 20px;
+    .title{
+        font-size:30px;
+        color:$text-primary-color;
+        font-weight: bold;
+        line-height: 54px;
+    }
+    .section-detail{
+        font-weight: bold;
+        font-size:18px;
+        max-width:419px;
+        margin:0 auto;
+        width:100%;
+        color:$text-secondary-color;
+        
+    }
+}
+.instagram {
+    
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+.font-size-16{
+    font-size:16px;
+    line-height: 24px;
+}
+.font-size-40{
+    font-size:40px;
+    line-height: 49px;
+}
+.btn-primary{
+    color:#fff;
+    cursor: pointer;
+    background-color: $primary-color;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition-property: background-color;
+    transition:all 0.3s;
+    &:hover{
+        background-color:$secondary-color;
+    }
+    
+}
+
+
+
+
+.btn-Secondary{
+    cursor: pointer;
+    background: $secondary-color;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition-property: background-color;
+    transition:all 0.3s;
+    &:hover{
+        background-color:$secondary-color;
+    }
+    
+    
+}
+.btn-outline{
+    // color:$color-yellow;
+    // border:1px solid $color-yellow;
+
+}
+
+.btn-prop{
+    border: none;
+    font-size: 14px;
+    font-family: $font-open_sens;
+    outline: none;
+    cursor: pointer;
+}
+
+.border-white{
+    border:1px solid #fff;
+    
+}
+
+
+
+// end of general css
