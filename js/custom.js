@@ -24,62 +24,56 @@
   });
 //   End of scroll down
 
-// slick slider
-  $(".vertical-center-4").slick({
-    dots: true,
-    vertical: true,
-    centerMode: true,
-    slidesToShow: 4,
-    slidesToScroll: 2
+    //top  Initialize Swiper
+    
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        loop: false,
+        freeMode: true,
+        loopedSlides: 5, //looped slides should be the same
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+        spaceBetween: 10,
+        loop: true,
+        loopedSlides: 5, //looped slides should be the same
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+            swiper: galleryThumbs,
+        },
+    });
+    
+//swiper ended
+// section Initialize Swiper
+
+  var swiper = new Swiper('.section-swiper-container', {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    // init: false,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 50,
+      },
+    }
   });
-  $(".vertical-center-3").slick({
-    dots: true,
-    vertical: true,
-    centerMode: true,
-    slidesToShow: 3,
-    slidesToScroll: 3
-  });
-  $(".vertical-center-2").slick({
-    dots: true,
-    vertical: true,
-    centerMode: true,
-    slidesToShow: 2,
-    slidesToScroll: 2
-  });
-  $(".vertical-center").slick({
-    dots: true,
-    vertical: true,
-    centerMode: true,
-  });
-  $(".vertical").slick({
-    dots: true,
-    vertical: true,
-    slidesToShow: 3,
-    slidesToScroll: 3
-  });
-  $(".regular").slick({
-    dots: true,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 3
-  });
-  $(".center").slick({
-    dots: true,
-    infinite: true,
-    centerMode: true,
-    slidesToShow: 5,
-    slidesToScroll: 3
-  });
-  $(".variable").slick({
-    dots: true,
-    infinite: true,
-    variableWidth: true
-  });
-  $(".lazy").slick({
-    lazyLoad: 'ondemand', // ondemand progressive anticipated
-    infinite: true
-  });
-//   End of slick slider
 
 // adding nav-item through jquery in navigation
   var large = '<li class="menu-item only-mob"><div id="appended" class="added-through-js"><div class="search"><form role="search" method="get" class="search-form" action="#"><label><span class="screen-reader-text">Search for:</span><input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" /></label><input type="submit" class="search-submit" value="" /></form></div><div class="account"><p>Account</p></div></div>  </li>';
