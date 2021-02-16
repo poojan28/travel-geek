@@ -23,7 +23,7 @@
   },
   "homepage": "https://gitlab.com/ws-themes/travel-joy#README",
   "devDependencies": {
-    "eslint": "^3.13.1",
+    "eslint": "^4.18.2",
     "grunt": "^1.0.4",
     "grunt-autoprefixer": "^3.0.4",
     "grunt-browser-sync": "^2.2.0",
